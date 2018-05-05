@@ -1,0 +1,145 @@
+<html>
+<head><title>DIY Homebrew EFI for Motorcycles</title></head>
+<body bgcolor="#000000" LINK="#80FFFF" VLINK="#80FF80" TEXT="#FFFFFF">
+
+<h1>Homebrew EFI -- Ignition!</h1>
+
+The XLVs ignition system is <A HREF="/xlv/tech_tips.html#Exciter">
+dodgy at best</A>, so it seems like a good idea to replace it.
+<p>
+The question being: how to make an ECU controlled CDI system?
+<p>
+I'm getting a lot of inspiration from this article:
+<A HREF="http://www.not2fast.com/ignition/cap-dis-ignit-cdi.pdf">
+A high-energy capacitor discharge ignition system</A>
+<A HREF="http://www.molla.org/DIY-CDI/SC-DIY-CDI-article-hires.pdf">[alt]</a>
+by John Clarke (<A HREF="http://www.siliconchip.com.au/">Silicon Chip</A>
+September 1997).  There's now a <A HREF="http://www.dse.com.au/">Dick Smith</A> kit for this, I think!  K3307.
+<p>
+Here's a page on <A HREF="http://www.transalp.de/technik/pd-technik/reparaturen/zuendbox.php">Transalp CDIs</A>, including a <A HREF="pix/schematic.jpg">schematic</A>.  The Transalp ones
+include their own high-voltage generators.  And some notes on
+a <A HREF="http://www.sportdevices.com/ignition/ignition.htm">PIC-based programmable CDI</A>
+
+<h2>High Voltage Supply</h2>
+
+The first step is to generate ~300VDC which is used to charge
+the capacitors in the CDI units.  The SC article uses a regulated
+stepup power supply from 9-15VDC, running at 20kHz.
+<p>
+This could also be used to power the XLV's stock CDIs, and this
+is probably where I'll start.
+<p>
+<!-- I've removed this parts list for the moment since the circuit 
+	is in a state of flux ... ha ha ha.
+Parts:
+<p>
+<table border=1 bgcolor="#000055">
+ <tr><th><A HREF="http://www.farnell.com/">Farnell</A> P/N</th>
+ 	<th><A HREF="http://www.jaycar.com.au/">Jaycar</A> P/N</th>
+	<th>Qty</th><th>Mfrs. P/N</th><th>Description</th>
+	<th>ID</th></tr>
+
+ <tr><th colspan=6 bgcolor="#550000">Transformer & Choke</th></tr>
+ <tr><td bgcolor="#005500">178-506<td>&nbsp;<td>1<td rowspan=3><A HREF="http://www.ferroxcube.com/prod/assets/etd29.pdf">ETD29</A><td>Bobbin ETD29 1sec 13pin<td rowspan=5>T1</tr>
+ <tr><td bgcolor="#005500">305-6375<td>&nbsp;<td>2<td>Core half ETD29 3C90</tr>
+ <tr><td bgcolor="#005500">178-507<td>&nbsp;<td>2<td>Clip ETD 29</tr>
+ <tr><td rowspan=2><em>only in 500g reels!</em><td bgcolor="#005500">WW-4012 (25g)<td>22m<td>&nbsp;<td>.25mm enamelled winding wire</tr>
+ <tr><td bgcolor="#005500">WW-4018 (100g)<td>1.5m<td>&nbsp;<td>.63mm enamelled winding wire</tr>
+ <tr><td>&nbsp;<td bgcolor="#005500">LF-1274<td>1<td>&nbsp;<td>47uH 5A choke<td>L1</tr>
+
+ <tr><th colspan=6 bgcolor="#550000">Semiconductors</th></tr>
+ <tr><td bgcolor="#005500">360-7264<td>&nbsp;<td>1<td><A HREF="http://www.irf.com/product-info/datasheets/data/ir2153.pdf">IR2153D</A><td>IC-SM MOSFET/IGBT Driver<td>IC1</tr>
+ <tr><td bgcolor="#005500">877-955<td>ZT-2276<td>2<td><A HREF="http://www.fairchildsemi.com/ds/MT/MTP3055V.pdf">MTP3055V</A><td>MOSFET N TO-220<td>Q1,Q2</tr>
+ <tr><td bgcolor="#005500">366-950<td>&nbsp;<td>4<td>1N4936<td>Diode Fast Recovery 1A 400V<td>D2,D3,D4,D5</tr>
+ <tr><td bgcolor="#005500">434-607<td>ZT-2115<td>1<td>BC337<td>Transistor NPN TO-92<td>Q3</tr>
+ <tr><td bgcolor="#005500">368-829<td>ZR-1475<td>4<td>&nbsp;<td>Diode Zener 1W 75V<td>D6,D7,D8,D9</tr>
+ <tr><td>251-707<td bgcolor="#005500">ZR-1004<td>1<td>1N4004<td>Diode<td>D1</tr>
+ 
+ <tr><th colspan=6 bgcolor="#550000">Resistors</th></tr>
+ <tr><td>343-262<td bgcolor="#005500">RR-3284<td>2<td>&nbsp;<td>Resistor 270R 5W<td>R11,R12</tr>
+
+ <tr><td>510-580<td bgcolor="#005500">RR-2810<td>3<td>&nbsp;<td>Resistor 33K 1W 5%<td>R2,R3,R4</tr>
+
+ <tr><td>542-908<td>RR-0524<td>2<td>&nbsp;<td>Resistor 10R 250mW 1%<td>R7,R8</tr>
+ <tr><td>543-226<td>RR-0556<td>2<td>&nbsp;<td>Resistor 220R 250mW 1%<td>R1,R6</tr>
+ <tr><td>543-627<td bgcolor="#005500">RR-0596<td>1<td>&nbsp;<td>Resistor 10K 250mW 1%<td>R9</tr>
+ <tr><td>543-743<td bgcolor="#005500">RR-0608<td>1<td>&nbsp;<td>Resistor 33K 250mW 1%<td>R5</tr>
+ <tr><td>543-809<td bgcolor="#005500">RR-0614<td>1<td>&nbsp;<td>Resistor 56K 250mW 1%<td>R10</tr>
+ 
+ <tr><th colspan=6 bgcolor="#550000">Capacitors</th></tr>
+ <tr><td>&nbsp;<td bgcolor="#005500">RM-7010<td>1<td>&nbsp;<td>Capacitor 1nF<td>C5</tr>
+ <tr><td>&nbsp;<td bgcolor="#005500">RM-7065<td>1<td>&nbsp;<td>Capacitor 10nF<td>C1</tr>
+ <tr><td>&nbsp;<td bgcolor="#005500">RM-7125<td>1<td>&nbsp;<td>Capacitor 100nF<td>C4</tr>
+ <tr><td>577-595<td>&nbsp;<td>1<td>2222 336 20105<td>Capacitor 1uF 275VAC MKP<td>C6*</tr>
+ <tr><td>108-800<td>&nbsp;<td>3<td>2222 373 21685<td>Capacitor 6.8uF 63V MKT<td>C2*</tr>
+
+</table> -->
+
+<h2>Microcontroller Interface</h2>
+
+Some parts of the circuit become unnecessary due to the
+microcontroller's interface ... and the CDI section of the 
+circuit will have to be doubled up for the XLVs two sets
+of coils.  Maybe even quadrupled up to give the coils one
+driver each.  *sigh*.
+
+<h2>News</h2>
+
+I've put it together, and already smoked out the veroboard!
+Oh dear ...
+<br>
+<A HREF="pix/img_1170-800.jpg"><IMG border=1 SRC="pix/img_1170-133.jpg"></A> 
+<A HREF="pix/img_1168-800.jpg"><IMG border=1 SRC="pix/img_1168-133.jpg"></A>
+<br>
+... I was worried that it was a fundamental design flaw, but it
+turns out there are limits on how much current the poor
+veroboard tracks will stand, and running at 100% duty cycle exceeds those
+limits!  Why 100% duty cycle?  Well, it turns out that the
+XLV CDIs use an SCR to short the capacitor, and these don't
+'turn off' until no current flows ... whereas this circuit never
+stops!  It also turns out that the 'kill switch' stops the engine
+by shorting the output of the CDIs to ground.  Suboptimal.
+<p>
+So, I'm putting together a new version of the circuit to 
+get around this, and rerouting the 'kill switch' lead to 
+turn the inverter off rather than shorting it out.  Additionally,
+the 1uF output capacitor will get a lot smaller and the
+regulator circuit will change to compensate for that, and 
+a 555 circuit will be used to switch the inverter on and off
+with a duty cycle of ~95% at ~1kHz, imitating the voltage 
+characteristics of the coil generator.  An extra diode or two
+need to be added as well ...
+<p>
+Well, that didn't work at all.  I could make it run by dropping
+the switching frequency to a couple of hundred hertz, but the
+voltage output was disappointing.  I also tried gating the
+voltage on and off with a pair of transistors, but that did
+the same thing ... locked up and strangled itself, and another
+MTP3055V hit the bin.
+<p>
+As a really dumb test, I tried
+<A HREF="/xlv/tech_tips.html#Exciter">wiring a
+mains transformer backwards</A> to feed the CDIs, but with
+a couple of rectifiers to knock out the negative-going sides ...
+which idled very nicely, but wouldn't rev above 3000rpm.
+I've got this horrible feeling that some part of the advance
+circuit depends on the generator input frequency: either
+that or the transformer just isn't producing enough something.
+
+<h2>Sod it!</h2>
+
+I've given up for the moment, and bought a new set of stator
+coils ... at least that way I can put the 'scope on them
+for volts and amps and see what they're really doing ...
+and my work on the AVR CDI controller continues ... since
+it'll be a bit smarter than the stock CDI units, it'll
+put less load on the coils, and maybe they won't burn
+out again.  Here's hoping.
+<br>
+<A HREF="pix/equip-800.jpg"><IMG border=1 SRC="pix/equip-133.jpg"></A>
+<em>The very latest high-tech equipment is <u>essential!</u></em>
+<p><br><p>
+
+<hr>
+<A HREF="../../">homepage</A> / <A HREF="../">motorcycles</A> / <A HREF="index.html">Homebrew EFI</A>
+</body></html>

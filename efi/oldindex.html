@@ -1,0 +1,199 @@
+<html>
+<head><title>DIY Homebrew EFI for Motorcycles</title></head>
+<body bgcolor="#000000" LINK="#80FFFF" VLINK="#80FF80" TEXT="#FFFFFF">
+
+<!--#include virtual="/sharkey/header.html" -->
+
+<h1>DIY Homebrew EFI for Motorcycles</h1>
+
+I've never really liked carburettors -- too many airways, too many
+little brass widgets, not enough adjustability -- and so I'm quite
+interested in retrofitting EFI to my bikes.  There are professional
+EFI systems out there, but they tend to be designed for cars -- thus
+bulky -- and cost more than my bike is worth in any case.
+<p>
+So, I've started looking at what is required to make a simple, 
+efficient, homebrew EFI system which is small and rugged enough
+for use on off-road motorcycles.
+<p>
+So, this is a page which will hopefully chronicle this foolhardy
+adventure, but for now all there is is ...
+<p>
+<em>Wow.  It's amazing just how many search-engine hits this
+little page keeps dragging in!  Check back in a month or so,
+I hope to have some piccies and some more specific info 
+available ... <A HREF="throttle.html">here's some stuff on the throttle bodies.</A></em>
+<h2>Thoughts:</h2>
+
+<h3>General:</h3>
+<ul>
+	<li>The environment on a motorbike is even tougher than
+	that in a car engine bay, with cold rain, hot oil and
+	warm beer frequently sloshing around.  Also, the electronics
+	must be protected from impact and vibration, especially
+	on an off-roader.  Locking the circuit inside a sealed,
+	die-cast aluminium box seems to be the way to go here.
+	Cable entry would need to be via waterproof cable glands.
+	The Alumnimium box would also provide an effective heat-sink.
+	(as long as it wasn't mounted too close to the exhaust pipe).
+	Foam inserts (rather than solid screw mounts) could protect
+	the board from vibration, although having a bunch of TO-220
+	components bolted to the case might stop this working. 
+	Maybe bending their legs into an S shape would be sufficient.
+
+	<li>Size is at a premium too.  On a car-oriented design,
+	you've got a lot of spare volume under the hood.  For
+	a bike, you're much more restricted: 6" x 4" x 2" would
+	be about the limit on the XLV.  The MegaSquirt is 
+	6.25" x 4.25" x 1.75" so that's at least the right ballpark.
+	Jaycar sell nice sealed boxes 115 x 90 x 55
+	(4" x 3.5" x 2.1") which might be a goer if it can all
+	be made to fit.
+
+	<li>The CPU should do as much as possible, thus minimizing
+	interface components.  It's easier to fit more code in
+	the box than more parts.  However, a one-chip solution is
+	far preferable to a two-chip solution, because tracks
+	eat up board space.  This indicates a CPU with onboard
+	RAM, ROM, ADCs and PWM.  Fortunately, modern microcontrollers
+	come with an amazing amount of that kind of thing.
+</ul>
+<h3>Outputs:</h3>
+<ul>
+	<li>Use MOSFETs and SCRs where appropriate to minimize
+	heat dissipation.  TO220 and TO126 devices fit more easily
+	than TO3!
+
+	<li>It should also control the ignition (CDI) timing and
+	(solid state) fuel pump relay, and maybe even an electronic
+	cooling fan for bikes which have one.  If a flyback is
+	needed to produce the CDI voltages, the CPU can control that
+	as well. A bypass valve may be needed to raise cold idle.
+	K-bikes apparently send the starter motor signal via the
+	ECU to stop it spinning when the engine is turning, which
+	is a thought.  
+
+	<li>Also has to switch on O2 sensor heaters. Should be
+	in the order of <A HREF="http://www.splitsec.com/products/ego1/ego1ds.htm">2A each</A>
+
+	<li>Communication to the user should be via a single
+	'idiot' light LED on the dash.  Green for go, Orange for
+	trouble, Red for failure.  Flashing patterns can indicate 
+	what the problem is.  More idiot lights on the board can
+	help with side-of-the-road diagnosis too.  And now Jaycar
+	sell RGB LEDs!  More lights, more lights!
+
+</ul>
+<h3>Inputs:</h3>
+<ul>
+	<li>Should use existing crank sensors where possible.
+	Generator phase may provide extra information here if
+	needed ... check frequency per RPM (bike generators
+	are often mounted on the end of the crank).  On the
+	other hand, the current CDI system uses these sensors,
+	and apparently CDI phase is more critical than EFI
+	phase anyway.
+
+	<li>Lambda / O2 / EGO sensor(s) -- apparently vary
+	between 0 and 1 volt, impedance in the order of 
+	1 Mohm.  So it'll need some kind of shielding
+	(or at least noise rejection) and
+	Hi-Z buffering.  It'd want to be a heated one,
+	so that's 4-wire.
+	
+	<li>Manifold vacuum, TPS, CHT -- use
+	commercially available sensors and interfaces to avoid
+	disappointment.
+
+	<li>Killswitch should immediately stop ignition,
+	fuel pump, everything stone dead.  It should not
+	just signal the controller, it should operate an
+	override relay or something in case of disaster.
+
+	<li>Starter button feeds into the ECU so that it
+	can refuse to run the starter w/ the engine going.
+	Maybe the button could be used to communicate with the ECU
+	when the engine _is_ running? Eg: to change maps.
+
+	<li>Power/Economy switch?  Wheel speed?  Accelerometer?
+	Speedshifter? <A HREF="http://www.ibutton.com">iButton</A>
+	for an ignition lock?  The possibilities are endless :-)
+</ul>
+
+<h2>Links:</h2>
+<ul>
+    <li>General:
+    	<ul>
+	<li><A HREF="http://www.diy-efi.org/diy_efi/">diy-efi.org</A>
+	<li><A HREF="http://www.bgsoflex.com/megasquirt.html">MegaSquirt</A>
+		and <A HREF="http://members.shaw.ca/megasquirt/UMS.htm">UltraMegaSquirt</A>
+	<li><A HREF="http://www.jefferies-au.org/My16M/index.htm">My16M</A>
+	<li><A HREF="http://homepages.ihug.com.au/~jharm/">SparkDog</A>
+	<li> Commercial roundup by Autospeed:
+ 	 <A HREF="http://autospeed.com/cms/article.html?&A=0165">part one</A>;
+	 <A HREf="http://autospeed.com/A_0168/cms/article.html">part two</A>;
+	 <A HREF="http://autospeed.com/cms/article.html?&A=0175">part three</A>.
+	<li>Useful information at <A HREF="http://www.sdsefi.com/tech.html">SDS EFI</A>
+	<li><A HREF="http://www.findapart.com.au">Find A Part</A>: useful
+	 Aussie wrecker's yard mailing list thingummy.
+	</ul>
+    <li>homebrew EFI bikes:
+    	<ul>
+	<li>Steve 'Viking' Oxley's <A HREF="http://www.teamrc17.net/projects/EFI/EFI.html">CBX750 / RC17 EFI Project</A>. 
+	<li>Frank '<A HREF="http://www.geocities.com/fwarner_au/mc_things/makingbmwk75gs.html">K75G/S</A>' Warner's <A HREF="http://www.geocities.com/fwarner_au/mc_things/efiithoughts.html">K75G/S EFI thoughts</A>. Frank also started
+	me thinking about idiot lights, eg: how to make EFI side-of-the-road
+	diagnosis as easy as carbs.
+	<li>Some photos of a <A HREF="http://www.peterrenner.net/OffRoad/technical/efi/">homebrew EFI on a WRZ400?</A>, comparing throttle bodies to carbs.
+	</ul>
+    <li>O2 sensors:
+        <ul>
+	<li><A HREF="http://brads.home.mindspring.com/Cars/O2sensor.txt">
+		various snarfed mailing list postings</A>
+	<li><A HREF="http://home.flash.net/~lorint/lorin/fuel/oxybench.htm">
+		Testing O2 sensors</A> (incl info from Bosch)
+	<li><A HREF="http://home.flash.net/~lorint/lorin/fuel/lambda.htm">
+		Lots more about O2 sensor tech</A>
+	<li><A HREF="http://www.taunus-biker.de/~mdvp/Lambda/Lambda.html">
+		More info in German</A>
+	<li>Standard narrowband sensors go for about $120 at Repco, Bursons, etc.
+	<li>Wideband sensors (Bosch LSU4) may have recently <A HREF="http://wbo2.com/">dropped in price</A>, so maybe they're a better bet.
+	</ul>
+    <li>Control Electronics:
+    	<ul>
+	<li>JedMicro's <A HREF="http://www.jedmicro.com.au/avr.htm">AVR 570 ATmega128 boards</A> look extremely nifty -- it fits a lot into 2" x 2".
+	<li> The Atmel <A HREF="http://www.atmel.com/dyn/products/product_card.asp?part_id=2018">ATmega128</A> itself.  This seems to have a lot of what
+	would be required of an EFI controller on board already, and it
+	should be fast enough
+	<li> Atmel programming <A HREF="http://combio.de/avr/">software for Linux</A> (also available as <A HREF="http://www.debian.org/">Debian</A> packages).
+	<li> <A HREF="http://elm-chan.org/works/avrx/report_e.html">Programming adaptors</A> seem to be easy to make too, although I've managed to
+avoid this problem by finding a <A HREF="http://toolbox.xilinx.com/docsan/2_1i/data/common/jtg/jtg2_2.htm">Xilinx XChecker DLC4</A> in a dumpster, which
+I think can be used with JTAG devices.
+	</ul>
+    <li>Injectors and Throttle Bodies:
+    	<em>see <A HREF="throttle.html">Throttle Body</A> page for my
+	progress with some GPz1100 TBs...</em>
+	<li>Modern BMW R-bikes (R1100, R1150, R850) use <A HREF="http://www.ibmwr.org/r-tech/oilheads/filter5.jpg">neat throttle bodies</A>
+	out in the breeze, but I've been unable to find out much more about
+	them.  <A HREF="http://www.interlog.com/~wateredg/Bike/PurgeTheSurge.html">Interesting page about fixing surging for EFI boxers</A>.
+	</ul>
+    <li>Ignition:
+	<ul>
+	<li><A HREF="http://www.diy-efi.org/efi332/html_archives/archive_num_23/msg00076.html">This message</A> refers to a bunch of articles in Circuit Cellar Ink by Ed Lansinger.  I'll have to get hold of the articles from RMIT.
+	</ul>
+    <li>Components:
+    	<ul>
+	<li><A HREF="http://www.national.com/pf/LM/LM9044.html">LM9044 Lambda Sensor Interface Amplifier</A>
+	<li><A HREF="http://www.national.com/pf/LM/LM1949.html">LM1949 Injector Drive Controller</A>, which drives a darlington in either resistive or switch mode.
+	<li><A HREF="http://www1.jaycar.com.au/images_uploaded/MTP3055V_D.PDF">MTP3055V power MOSFET</A> might be handy for other high-current applications.
+	<li><A HREF="http://www1.jaycar.com.au/images_uploaded/4N2X.PDF">4N2X optoisolator</A> ... I have a feeling optoisolation might be a good idea, and they're small and cheap enough. 
+	</ul>
+   <li>Thanks to:
+        <ul>
+	<li>Viking and Frank for inspiration!
+	<li>the <A HREF="http://users.hunterlink.net.au/~ddped/mcmodrau.htm">McMod</A>ders for helpful advice!
+	</ul>
+</ul>
+
+<hr>
+<A HREF="../../">homepage</A> / <A HREF="../">motorcycles</A>
+</body></html>

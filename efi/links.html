@@ -1,0 +1,91 @@
+<html>
+<head><title>Homebrew EFI Links</title></head>
+<body bgcolor="#000000" LINK="#80FFFF" VLINK="#80FF80" TEXT="#FFFFFF">
+
+<h1>Homebrew EFI Links</h1>
+
+
+<ul>
+    <li>General:
+    	<ul>
+	<li><A HREF="http://www.diy-efi.org/diy_efi/">diy-efi.org</A>
+	<li>MegaSquirt and Family:
+		<ul>
+		<li><A HREF="http://www.bgsoflex.com/megasquirt.html">MegaSquirt</A>
+		and <A HREF="http://members.shaw.ca/megasquirt/UMS.htm">UltraMegaSquirt</A> and <A HREF="http://autos.groups.yahoo.com/group/megasquirtnspark/">MegaSquirt'n'Spark</A> and <A HREF="http://autos.groups.yahoo.com/group/megacycle/">MegaCycle</A>.
+		<li>The somewhat smaller, sealed, single-board version:
+		<A HREF="http://www.mini-ms.com/">Mini MS</A>.
+		<li><A HREF="http://caffrey.dk/megasquirt/">MegaSquirtAVR</A>,
+		Similar to MegaSquirt, but using C code on an Atmel AVR.
+		<li>A round up of all the <A HREF="http://home.earthlink.net/~jcgebhart/megaignite.html">MegaStuff</A>.
+		</ul>
+	<li><A HREF="http://www.jefferies-au.org/My16M/index.htm">My16M</A>
+	<li><A HREF="http://homepages.ihug.com.au/~jharm/">SparkDog</A>
+	<li> Commercial roundup by Autospeed:
+ 	 <A HREF="http://autospeed.com/cms/article.html?&A=0165">part one</A>;
+	 <A HREf="http://autospeed.com/A_0168/cms/article.html">part two</A>;
+	 <A HREF="http://autospeed.com/cms/article.html?&A=0175">part three</A>.
+	<li>Useful information at <A HREF="http://www.sdsefi.com/tech.html">SDS EFI</A>
+	<li><A HREF="http://www.findapart.com.au">Find A Part</A>: useful
+	 Aussie wrecker's yard mailing list thingummy.
+	</ul>
+    <li>homebrew EFI bikes:
+    	<ul>
+	<li>Steve 'Viking' Oxley's <A HREF="http://teamrc17.net/tech/projects/EFI/EFI.html">CBX750 / RC17 EFI Project</A>. 
+	<li>Frank '<A HREF="http://www.geocities.com/fwarner_au/mc_things/makingbmwk75gs.html">K75G/S</A>' Warner's <A HREF="http://www.geocities.com/fwarner_au/mc_things/efiithoughts.html">K75G/S EFI thoughts</A>. Frank also started
+	me thinking about idiot lights, eg: how to make EFI side-of-the-road
+	diagnosis as easy as carbs.
+	<li>Some photos of a <A HREF="http://www.peterrenner.net/OffRoad/technical/efi/">homebrew EFI on a WRZ400?</A>, comparing throttle bodies to carbs.
+	</ul>
+    <li>O2 sensors:
+        <ul>
+	<li><A HREF="http://brads.home.mindspring.com/Cars/O2sensor.txt">
+		various snarfed mailing list postings</A>
+	<li><A HREF="http://home.flash.net/~lorint/lorin/fuel/oxybench.htm">
+		Testing O2 sensors</A> (incl info from Bosch)
+	<li><A HREF="http://home.flash.net/~lorint/lorin/fuel/lambda.htm">
+		Lots more about O2 sensor tech</A>
+	<li><A HREF="http://www.taunus-biker.de/~mdvp/Lambda/Lambda.html">
+		More info in German</A>
+	<li>Standard narrowband sensors go for about $120 at Repco, Bursons, etc.
+	<li>Wideband sensors (Bosch LSU4) may have recently <A HREF="http://wbo2.com/">dropped in price</A>, so maybe they're a better bet.
+	</ul>
+    <li>Control Electronics:
+    	<ul>
+	<li>JedMicro's <A HREF="http://www.jedmicro.com.au/avr.htm">AVR 570 ATmega128 boards</A> look extremely nifty -- it fits a lot into 2" x 2".
+	<li> The Atmel <A HREF="http://www.atmel.com/dyn/products/product_card.asp?part_id=2018">ATmega128</A> itself.  This seems to have a lot of what
+	would be required of an EFI controller on board already, and it
+	should be fast enough
+	<li> Atmel programming <A HREF="http://combio.de/avr/">software for Linux</A> (also available as <A HREF="http://www.debian.org/">Debian</A> packages).
+	<li> <A HREF="http://elm-chan.org/works/avrx/report_e.html">Programming adaptors</A> seem to be easy to make too, although I've managed to
+avoid this problem by finding a <A HREF="http://toolbox.xilinx.com/docsan/2_1i/data/common/jtg/jtg2_2.htm">Xilinx XChecker DLC4</A> in a dumpster, which
+I think can be used with JTAG devices.
+	</ul>
+    <li>Injectors and Throttle Bodies:
+    	<ul>
+    	<li><em>see <A HREF="throttle.html">Throttle Body</A> page for my
+	progress with some GPz1100 TBs...</em>
+	<li>Modern BMW R-bikes (R1100, R1150, R850) use <A HREF="http://www.ibmwr.org/r-tech/oilheads/filter5.jpg">neat throttle bodies</A>
+	out in the breeze, all <A HREF="http://www.largiader.com/tech/tb/">45mm</A>. <A HREF="http://www.interlog.com/~wateredg/Bike/PurgeTheSurge.html">Interesting page about fixing surging for EFI boxers</A>.
+	</ul>
+    <li>Ignition:
+	<ul>
+	<li><A HREF="http://www.squirrelpf.com/msavr/files/Cap-dis-ignit-CDI.pdf">A high-energy capacitor discharge ignition system</A> by John Clarke, Silicon Chip September 1997.
+	</ul>
+    <li>Components:
+    	<ul>
+	<li><A HREF="http://www.national.com/pf/LM/LM9044.html">LM9044 Lambda Sensor Interface Amplifier</A>
+	<li><A HREF="http://www.national.com/pf/LM/LM1949.html">LM1949 Injector Drive Controller</A>, which drives a darlington in either resistive or switch mode.
+	<li><A HREF="http://www1.jaycar.com.au/images_uploaded/MTP3055V_D.PDF">MTP3055V power MOSFET</A> might be handy for other high-current applications.
+	<li><A HREF="http://www1.jaycar.com.au/images_uploaded/4N2X.PDF">4N2X optoisolator</A> ... I have a feeling optoisolation might be a good idea, and they're small and cheap enough. 
+	</ul>
+   <li>Thanks to:
+        <ul>
+	<li>Viking and Frank for inspiration!
+	<li>the <A HREF="http://users.hunterlink.net.au/~ddped/mcmodrau.htm">McMod</A>ders for helpful advice!
+	</ul>
+</ul>
+
+<hr>
+<A HREF="../../">homepage</A> / <A HREF="../">motorcycles</A> / <A HREF="index.html">Homebrew EFI</A>
+</body></html>

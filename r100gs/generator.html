@@ -1,0 +1,131 @@
+<html><head><title>R100GS: EnDuraLast 450W Generator</title></head>
+<body><h1>R100GS: EnDuraLast 450W Generator</h1>
+
+... from <A HREF="http://www.euromotoelectrics.com/enduralast.html">Euro Moto Electrics</A>.
+
+<h2>Theory</h2>
+
+Look, the design of the stock electrical system is astoundingly bad.
+Yes, it's better than the Zener shunt regulation which was current
+on Britbikes in 1970.  No, it sucks compared to Japanese systems
+from the mid-Eighties onwards.
+<p>
+The worst aspect is the location of the diode board, inside the
+engine casing.  Not only is there relatively little airflow, but
+the case gets more than a little warm when the engine is running.
+Semiconductor failure rates are exponential with temperature, and
+diode junctions are 100x as likely to fail at 100&deg;C as they
+are at 40&deg;C.  And the diode board has 11 of these, baking away!
+Plus there's brushes to wear out, a field coil which doesn't operate
+if its warning lamp burns out, etc, etc.
+<p>
+The EnDuraLast system replaces all of these parts ... and 
+all of its semiconductors are <u>outside</u> the engine cases!
+<p>
+This document outlines the operation of the regulator:
+<A HREF="http://www.euromotoelectrics.com/EnDuraLast%20450%20Voltage%20Regulation.pdf">Regulator Info .PDF</A>.
+<br>
+I hope to take some measurements of my own and provide a little more
+information soon.  In summary, though, this is a <u>switch-mode</u>
+regulator, and so "excess energy" is <u>not</u> "wasted" any more
+than a light bulb wastes energy while it is switched off.
+<p>
+The "450W" bit is a bit misleading, and misses the point anyway.
+Sure, it can supply 32A at ~8000rpm, but when is an airhead
+ever revving that high for long?  The important point is that 
+it can generate a lot of current even at low RPM ... it really
+should be called the "20A at ~2000rpm" generator, but I guess most
+people would miss the point!
+
+<h2>Pack & Post</h2>
+
+Very nicely packed for it's international trip, which took all of
+4 days from the USA to Australia with USPS/AusPost.  The stator/rotor
+were in not two, not three but FOUR boxes ... plus layers of foam
+and such.
+<p>
+<!--<a href="pix/img_3691-800.jpg"><img border=1 src="pix/img_3691-133.jpg"></A>
+<a href="pix/img_3692-800.jpg"><img border=1 src="pix/img_3692-133.jpg"></A>
+<a href="pix/img_3693-800.jpg"><img border=1 src="pix/img_3693-133.jpg"></A>
+<a href="pix/img_3696-800.jpg"><img border=1 src="pix/img_3696-133.jpg"></A>
+<a href="pix/img_3699-800.jpg"><img border=1 src="pix/img_3699-133.jpg"></A>-->
+
+<a href="http://zoic.smugmug.com/photos/63456849-L.jpg"><img src="http://zoic.smugmug.com/photos/63456849-Th.jpg"></A>
+<a href="http://zoic.smugmug.com/photos/63456874-L.jpg"><img src="http://zoic.smugmug.com/photos/63456874-Th.jpg"></A>
+<a href="http://zoic.smugmug.com/photos/63456894-L.jpg"><img src="http://zoic.smugmug.com/photos/63456894-Th.jpg"></A>
+<a href="http://zoic.smugmug.com/photos/63456915-L.jpg"><img src="http://zoic.smugmug.com/photos/63456915-Th.jpg"></A>
+
+<h2>Installation</h2>
+
+<h3>Physical</h3>
+I've ended up locating the rec/reg in exactly the same way as 
+<A HREF="http://photos.yahoo.com/bcostell">Bcostell</A> did.
+I was considering mounting it on top of the coil, but I was
+a bit worried that it'd block airflow to the ignition module.
+It should get a fair bit of air back there.  The space where the
+old regulator sits can be used for headlight relays.
+<p>
+There's suddenly a huge amount of space under that front cover!
+<p>
+<!--<a href="pix/img_3700-800-L.jpg"><img border=1 src="pix/img_3700-133-L.jpg"></A>
+<a href="pix/img_3701-800-L.jpg"><img border=1 src="pix/img_3701-133-L.jpg"></A>
+<a href="pix/img_3702-800.jpg"><img border=1 src="pix/img_3702-133.jpg"></A>-->
+<a href="http://zoic.smugmug.com/photos/63456939-L-1.jpg"><img src="http://zoic.smugmug.com/photos/63456939-S-1.jpg"></A>
+<a href="http://zoic.smugmug.com/photos/63456962-L-1.jpg"><img src="http://zoic.smugmug.com/photos/63456962-S-1.jpg"></A>
+<a href="http://zoic.smugmug.com/photos/63457061-L.jpg"><img src="http://zoic.smugmug.com/photos/63457061-S.jpg"></A>
+<p>
+(The bracket which the rec/reg is attached to was already broken.  You 
+can't see it, but there's an extra ground wire running forward to the
+bolts which attach the ignition controller, just to be sure to be sure.
+I tapped the power line into one of the blue/green wires in the loom.
+Yes, this bike really could do with a wash. No, the frame spine isn't bent,
+it's just the lens.)
+
+<h3>Electrical</h3>
+
+My one criticism of the kit is that the electrical hardware supplied may
+cause problems for the overenthusiatic amateur.  There's lots of folks who
+are quite decent home mechanics, but terrible butchers with their electrics.
+Those $5 crimp tools aren't worth a cent for a high-current application
+like this.  EME supply a good assortment of parts so that you can construct
+a suitable setup for any airhead, but if I was them EME I'd pick the two
+or three most popular models (the GS almost certainly being one of them)
+and produce wiring kits for them.  Other models would still require
+modifications, but at least there'd be an example to show how it is meant
+to be done.  The risk is that dodgy installations will lead to electrical
+fires, and damage EME's reputation ...
+<p>
+I strongly recommed crimping <strong>and</strong> soldering <strong>and</strong>
+heat-shrinking all the connections.  The crimp provides physical strength,
+the solder electrical conductivity, the heatshrink electrical (and moisture)
+insulation.  For example, for the connection between the two red battery
+wires from the regulator and the fuse holder, I removed the supplied crimp
+barrel from its yellow insulating sleeve, cut bits of heatshrink to sit over
+the wires, crimped the wires into the barrel, flooded the barrel with solder
+(the solder gets drawn into the wires by capilliary action, magic) then shrunk
+the bits of heatshrink around the joint to provide a double layer of
+insulation.  I'll try to remember to take some photos next time.
+
+<h2>More information</h2>
+
+There's an <A HREF="http://www.advrider.com/forums/showthread.php?t=96500">EnDuraLast thread on ADVrider</A> too.  Actually, there's several.  Try searching
+for 'EnDuraLast' or '450W'.  I need to copy some of the information I posted
+in those threads back into this page when I get the chance.
+<p>
+Of particular note is this comment from <A HREF="http://www.nohorizons.net">Kevin Beretta</A>, who's on his way 'round the world:
+<blockquote>
+	15,000 miles of abuse so far (www.nohorizons.net). Still charging as if new. The battery is getting abused (overnight charging of computer etc.) but seems to be holding up. Glad I got this setup, as the other day it took 2 days to cover 40 miles over a pass, at walking pace. Strange to not get out of first gear for 2 days ... The RPM's were low, thankfully there was cool air to cool the bike. Not sure how you would do it with a stock setup ... I don't think I got over 3k rpm...
+</blockquote>
+
+<h2>Disclaimer</h2>
+
+I'm not an employee or representative of EuroMotoElectrics, just a 
+satisfied customer.  There are less radical alternatives out there,
+like the 
+<A HREF="http://www.motoelekt.com/charging.htm">Omega 400W</A>
+system from <A HREF="http://www.motoelekt.com/">Motorrad Elektrik</A>,
+which has been around a lot longer, and have a very good reputation too.
+
+<hr>
+<A HREF="../../">homepage</A> / <A HREF="../">motorcycles</A> / <A HREF="./">R100GS</A>
+</body></html>

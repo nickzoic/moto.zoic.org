@@ -1,0 +1,119 @@
+<html>
+<head><title>Homebrew EFI for Motorcycles</title></head>
+<body bgcolor="#000000" LINK="#80FFFF" VLINK="#80FF80" TEXT="#FFFFFF">
+
+<h1>Homebrew EFI for Motorcycles</h1>
+
+<center><table border=1 bgcolor="#000066" width="75%"><tr><td>
+<strong>
+	This project has more or less stalled for the moment: the
+	XLV is off the road, and the BMW is keeping me busy enough
+	for the moment!  I've been helping out a little with
+	<A HREF="http://teamrc17.net/tech/projects/EFI/EFI.html">Viking's
+	EFI RC17 (CBX750)</A> in the meantime.
+</strong>
+</td></tr></table></center>
+<p>
+
+I've never really liked carburettors -- too many airways, too many
+little brass widgets, not enough adjustability -- and so I'm
+interested in experimenting with retrofitting EFI to my bikes,
+and making it more fault tolerant and more easily diagnosable
+than the original carbs.
+<p>
+My aged <A HREF="/xlv/">Honda XLV750R</A> has chronic
+carb problems, so it gets to be the guinea pig.  These pages attempt
+to chronicle this foolhardy adventure ...
+<p>
+<h2>Subsystems</h2>
+
+<h3>Throttle Bodies</h3>
+
+I sourced a set of 4 GPz1100-B2 34mm throttle bodies from a local
+wrecker's yard, along with their fuel pump, fuel regulator
+and TPS.  They're not a perfect fit for the application, but
+they're not bad.
+
+
+<ul>	<li><A HREF="throttle.html#Fitting">Fitting to the XLV.</A>
+	<li><A HREF="throttle.html#TPS">TPS</A>
+	<li><A HREF="throttle.html#Injectors">Injectors</A>
+</ul>
+
+<h3>Fuel Plumbing</h3>
+
+EFI systems need an awful lot of spaghetti ...
+
+<ul>
+	<li><A HREF="plumb.html#parts">GPz Plumbing Parts</A> 
+	<li><A HREF="plumb.html#low">Low Pressure Fuel</A>
+		- from tank to fuel pump, and from regulator
+		to tank, including a low-pressure filter.
+	<li><A HREF="plumb.html#high">High Pressure Fuel</A>
+		- from fuel pump to injectors and fuel regulator 
+	<li><A HREF="plumb.html#vac">Manifold Air Pressure</A>
+		- to fuel regulator and to MAP sensor.
+</ul>
+
+<h3>Sensors</h3>
+
+<ul>	<li>Crank Angle / Tach: The XLV has a pair of 
+		<A HREF="vareluc.html">Variable Reluctance</A>
+		sensors mounted on its crank, each fires at TDC
+		for its cylinder.
+	<li>TPS:  See 'Throttle Bodies', above.
+	<li>O2/Lambda Sensor: 4-wire heated, Mounted in
+		<A HREF="zorst.html">exhaust pipe</A>,
+		back behind the join.  Wide-band sensors are becoming quite
+		common these days, but I'll probably try to get it
+		working with a narrowband first.
+	<li>Manifold Air Pressure (MAP):  May or may not be 
+		necessary, depending on the algorithm used.  May or
+		may not be sufficient, as there isn't a lot of air
+		volume between throttle and inlets so I'd expect the
+		air pressure to be very erratic.
+	<li>Manifold Air Temperature (MAT):  Mounted in the
+		plastic airbox lid, I think. Possibly mounted
+		so that the entire sensor is inside the airbox
+		to make sure it reads the correct temperature.
+		See also this page on
+		<A HREF="http://www.sonic.net/~mikebr/efi/problems/mat_location.html">MAT Sensor Location</A>
+	<li>Cylinder Head Temperature (CHT):  The XLV is air/oil
+		cooled, so it's tricky to measure the engine temperature.
+		Probably the simplest way is to tap a temp sensor into
+		the rear head cover.  This would provide cold-start
+		enrichment info to the ECU, and also enable me to
+		keep an eye on the state of the cooling system.
+</ul>
+
+<h3>ECU Hardware</h3>
+
+<ul>
+	<li><A HREF="ecu.html">Initial Thoughts on ECU</A>
+	<li><A HREF="ignite.html">Initial Thoughts on Ignition</A>
+</ul>
+
+<ul>	<li><A HREF="box.html">Enclosure / Connectors</A>
+	<li>Inputs
+		<ul>	<li>O2 sensor - amplifier
+			<li>MAP sensor - 0 .. 5 V
+			<li>TPS - 0 .. 5 V
+			<li>Other (switches and stuff)
+		</ul>
+	<li>Drivers
+		<ul>	<li>Injectors - Optoisolated MOSFET
+			<li>Power - for fuel pump, O2 sensor, starter.
+			<li>Display - (leds and stuff)
+		</ul>
+	<li>Power
+	<li>CPU
+</ul>
+
+<h2>Links</h2>
+
+See the <A HREF="links.html">Homebrew EFI links</A> page.
+<p>
+
+<hr>
+<A HREF="../../">homepage</A> / <A HREF="../">motorcycles</A>
+</body></html>

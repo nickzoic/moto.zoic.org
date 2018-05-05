@@ -1,0 +1,12 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title><!--#echo var="SERVER_NAME"--> 404</title>
+</head>
+
+<body>
+	<h1><!--#echo var="SERVER_NAME"--> 404</h1>
+	<p>Page Not Found</p>
+
+	<p>Try <a href="http://<!--#echo var="SERVER_NAME"-->/">http://<!--#echo var="SERVER_NAME"-->/</a>
+</body>

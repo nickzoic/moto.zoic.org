@@ -1,0 +1,12 @@
+# Help!  I am a prisoner in a toothpaste factory!
+
+User-agent: *
+Disallow: /rally/
+Disallow: /ev/pix/
+Disallow: /xlv/pix/
+Disallow: /r100gs/pix/
+Disallow: /efi/pix/
+Disallow: /other/
+Disallow: /xlv/manual/manual-png.zip
+
+# That's all!

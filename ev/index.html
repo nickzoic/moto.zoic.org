@@ -1,0 +1,434 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head><title>Electric Motorcycles</title></head>
+<body bgcolor="#000000" LINK="#80FFFF" VLINK="#80FF80" TEXT="#FFFFFF">
+
+<table width="100%"><tr>
+<td> <h1>Electric Motorcycles</h1>
+<td align=right valign=top><font size="+4" color="#0084BE">eMC</font><br>
+</tr></table>
+
+Here's my notes on building an electric motorcycle.
+<p>
+I think I've
+decided by now that it won't be practical for me to build one right
+now, but it was fun finding out more about them.  I hope these 
+notes will be useful to others ...
+
+
+<h2>Initial Parameters</h2>
+
+<table><tr><td>
+
+<em>From my initial enquiry to the EV list ...</em>
+
+<blockquote><tt>
+So far I'm thinking:
+<p>
+<ul>
+<li> Electric motor with 10-20hp peak and maybe 1-2hp continuous.
+<li> Simple chain drive to rear wheel.                           
+<li> About 80kg of sealed batteries in case it falls over -- maybe
+                Optima Yellow Top?  Either a 48V or a 60V system.
+<li> Some kind of twistgrip controller.  Are regenerative ones
+                available in this power range?
+<li> Some kind of onboard charger, so the bike can just be plugged
+                in to the 240V mains and left overnight / at work / etc.
+<li> All shoehorned into a rolling chassis from a streamlined
+                250-400cc commuter would be about right ... kerb weight
+                about 160kg before, less than 200kg after I hope.
+</ul>
+<p>
+Does this sound reasonable?
+<p>
+I've gone through the bikes in the photo album and going by the stated
+ranges and battery configs, the efficiency seems to vary enormously ...
+between 50 Wh/km and 400 Wh/km!  Anyone know a good rule of thumb for
+a two-wheeled electric beastie?
+<p>
+I'd need to get a 'regular' range of maybe 40km (25mi) and a 'regular'
+speed of 60km/h (38mi/h) out of it to make it a practical bike, and
+maybe occasionally a 60km (38 mi) range or a 80km/h (50 mi/h) top speed.
+<p>
+Is this practical with the available tech, or will I just have to wait
+for fuel cells or unobtainium batteries or something?
+<p>
+Thanks!
+<p>
+        -----Nick 'sharks' Moore
+</tt></blockquote>
+
+<h2>Some investigation</h2>
+
+<h3>Wh/km</h3>
+
+I found a whole heap of data on electric bikes on the 
+<A HREF="http://www.austinev.org/evalbum/motorcycles.html">Electric Motorcycles Photo Album</A>, and tried to use this to work out what kind of Wh/km to expect.
+As you can see from the graph and table below, there's quite a lot of variation:
+<p>
+<table border width="100%">
+<tr><th colspan=3>Battery<th>Range<th>Speed<th>Drain<th rowspan=2>Name<th rowspan=2>Batteries<th rowspan=2>Motor<th colspan=2>Final Drive</tr>
+<tr><th>V<th>Ah<th>Wh<th>km<th>kmh<th>Wh/km<th>Type<th>Ratio</tr>
+<tr><td>48<td>22<td>1056<td>51-64<td>64<td>29<td>Jackal<td>SLA<td>ETek<td>Chain</tr>
+<tr><td>48<td>65<td>3120<td>32-51<td>77<td>76<td>EMB Lectra<td>Optima D750S<td>Etek<td>Chain<td>3.375</tr>
+<tr><td>48<td>55<td>2460<td>48<td>80<td>55<td>E-Scramler<td>PowerSonic 55Ah<td>Advanced DC<td>Chain<td>2.53</tr>
+<tr><td>48<td>40<td>1920<td>40<td>81<td>48<td>250XL<td>SLA 40Ah<td>Etek<td>Chain</tr>
+<tr><td>48<td>50<td>2400<td>30<td>86<td>80<td>Xineta<td>Hawker 12V 50Ah<td>Cupex (perm)<td>Chain</tr>
+<tr><td>48<td>44<td>2112<td>24-40<td>88<td>66<td>ReCycle<td>22AH SLA (paired)<td>Etek<td>Chain</tr>
+<tr><td>36<td>115<td>4140<td>32<td>88<td>129<td>ElectroCycle<td>trojan 12V TMH<td>Prestolite<td>Chain<td>6</tr>
+<tr><td>72<td>41<td>2952<td>6-13<td>100+<td>307<td>BEM<td>Optima YT D51<td>Advanced DC<td>Chain</tr>
+<tr><td>60<td>55<td>3300<td>32-40<td>100<td>91<td>ElectricNinja<td>55AH<td>Etek<td>Chain</tr>
+<tr><td>72<td>100<td>7200<td>27<td>104<td>265<td>Piggy<td>Trojan 100AH<td>Advanced DC<td>Chain<td>4.6</tr>
+<tr><td>96<td>42<td>4032<td>24-32<td>128+<td>144<td>REVision<td>Hawker Genesis<td>Advanced DC<td>Shaft<td>~3</tr>
+</table>
+<A HREF="pix/ranges.png"><IMG SRC="pix/ranges.png" width=320 height=240></A>
+<p>
+Of course, this is total battery Wh, not actual Wh used to travel that
+range.  There's a huge variation in claimed efficiency though ... perhaps
+different depth-of-discharge (DoD) strategies, different motors, 
+different gearing, aerodynamics all add up.  
+
+<h3>Choosing Batteries / Optimizing Optimas</h3>
+
+<table><tr>
+<td><A HREF="pix/batt.png"><IMG SRC="pix/batt.png" width=320 height=240></A>
+<td><A HREF="pix/optima-dod.png"><IMG SRC="pix/optima-dod.png" width=320 height=240></A>
+<tr><td>
+I'll probably be stuck with the lower lines on the graph, eg: Optima YTs
+or Federal Gel-Tech, because the deep-cycle types don't offer enough
+peak amps.  Such is the way of engineering tradeoffs!
+<td>
+Found some good numbers of Optima YTs discharge cycle, and it seems
+like about 40% DoD should give the best lifetime in km.
+</tr>
+</table>
+
+<h3>Practicalities</h3>
+
+Okay, let's assume for the sake of the argument I can get 100Wh(cap)/km ...
+assuming a 50% DoD, that's really a consumption of 50Wh/km, at say 50km/h
+that's 2500W, which sounds about right.
+<p>
+So for a ~35km range I'd need 3.5kWh off battery capacity ...
+<p>
+<table border>
+<tr><th rowspan=2>#<th rowspan=2>Type<th colspan=5>Capacity (total)<th>Weight<br>(total)<th>Size<br>(each)<th>Price Retail<br>(total)<th>Value</tr>
+<tr><th>V<th>Ah(20hr)<th>Wh(cap)<th>CCA<th>Peak kW<th>kg<th>mm<th>AUD<th>Wh / $</tr>
+<tr><td>4<td>Optima YT D31<td>48<td>75<td>3600<td>900<td>43.2<td>108<td>325*165*238<td>$1840<td>1.9
+<tr><td>4<td><strong>Federal Gel-Tech 8G24</strong><td>48<td>73.6<td>3530<td>410<td>19.7<td>97<td>276*171*251<td>$1200<td><strong>2.9</strong>
+<tr><td>5<td>Optima YT D34<td>60<td>55<td>3300<td>750<td>45.0<td>97.5<td>254*178*198<td>$1925<td>1.7
+<tr><td>6<td>Federal Gel-Tech 8G22NF<td>72<td>50<td>3600<td>245<td>17.6<td>103<td>238*140*235<td>$1434<td>2.5
+<tr><td>14<td>Thunder Sky LiIon TS-LMP80<td>50.4<td>80<td>4032<td>?200?<td>?10?<td>42<td>220*145*61<td>?$2000?<td>?2?
+<tr><td>14<td>Thunder Sky LiIon TS-LMP200<td>50.4<td>200<td>10080<td>?200?<td>?10?<td>95.2<td>285*182*100<td>?$5000?<td>?2?
+</table>
+<p>
+... fitting them into a bike-sized
+vehicle won't be easy.  Cardboard models seem the way to go.  I've added in LiIon battery options because they might be a good option ... they seem to be about the same $/Wh but half the kg/Wh.  On the down-side, they require a per-cell
+Battery Management System.  See Victor's CRX under 'Links:' below ...
+<p>
+
+<h3>Motor and Drivetrain</h3>
+
+<i>This is a bit out of date, as the Etek M7 has been replaced with 
+a couple of new contenders: from B&S, the <a href="http://www.robotcombat.com/marketplace_etek.html">Etek RT and Mars Brushless</a>, and from Perm the <a href="http://www.robotcombat.com/products/EMS-PMG132.html">PMG132</a>.  So the following is a bit out of date.  Needless to say, the technology has only gotten better.</i>
+<p>
+The simplest setup is likely to be the permanent-magnet 
+<A HREF="http://www.specialtyvehiclesonline.com/eprints/briggsandstratton.htm">Etek M7</A> from <A HREF="http://www.briggsandstratton.com/">Briggs & Stratton</A>.  They're pretty widely used in the electric motorcycle world.  There's
+quite a bit of info on the Etek at <A HREF="http://www.robotcombat.com/marketplace_etek.html">robotcombat.com</A> and <A HREF="http://www.powerped.com.au/part_motorspecs.shtml?openmenu=11+123">powerped.com.au</A> (scroll down) and it looks like it'd be easy enough to mount in a motorcycle application.
+<p>
+The Etek will spin at 72RPM/volt, so at 48V that's a top speed of 3456RPM.
+A motorcycle wheel&tyre is about (hand wave) 2m in circumference.
+Front sprockets go down to about 13 teeth, and rears up to about 57,
+so we'd have a max speed of 3456 RPM * 13/57 * 2 m/R = 26 m/s, or about
+94 kmh flat chat.  Sounds about right, perhaps a little high, but
+to get a higher final drive ratio would mean adding an idler shaft
+or similar, and I'd rather not.  On the other hand, if you <em>were</em>
+going to add an idler shaft, you could add it coaxial to the 
+swingarm pivot, to keep the chain/belt lengths constant.
+<p>
+Motorcycle sprockets are generally splined to fit a shaft, but it's probably
+easier to machine a sleeve keyed on the inside to fit the Etek
+output shaft and stepped on the outside to make it easy to braze/weld
+the front sprocket to the sleeve.
+
+<h3>Regeneration!</h3>
+
+<table><tr><td>
+
+One of the disappointing things about a permanent magnet setup is that
+it makes it hard to do regenerative braking.  Since motor voltage is
+proportional to motor RPM, the only time you'll get a voltage high 
+enough to recharge the batteries is revving the motor beyond its normal
+maximum RPM ... and on a direct-drive machine, that'd only be when
+rolling down a hill quicker than the bikes top speed ... not likely to
+be a common occurance ...
+<p>
+One way around this is to use a "Contactor controller", or series-parallel
+switch.  Put simply: split the pack in half, and wire these halves up so 
+that they can be connected in series or parallel.  This provides two
+'gears' ... in parallel, maximum current is increased for more torque,
+and in series maximum voltage is increased for more top speed.
+<p>
+<center><img src="pix/serpar.png" alt="Serial vs. Parallel"></center>
+<p>
+Pretty obviously, fuses would be needed to prevent the batteries
+exploding if a contactor stuck or was closed at the wrong time.
+<p>
+And, of course, dropping down into Parallel reduces the battery voltage,
+so if you've sped up to top speed in Series and then shift into Parallel,
+there's sufficient voltage to regeneratively charge the batteries.  It's
+not exactly sophisticated, but it's a start.  The idea can be extended:
+
+<table border width="100%">
+  <tr>
+    <th>Num Batteries</th>
+    <th>Num Gears.</th>
+    <th colspan=4>Gears<br/><small>( N<sub>series</sub> * N<sub>parallel</sub> )</small></th>
+    <th colspan=4>Top Speeds</br/><small>With top gear top speed = 100</small></th>
+  <tr>
+    <td>2</td>
+    <td>2</td>
+    <td>1 * 2</td>
+    <td>2 * 1</td>
+    <td></td>
+    <td></td>
+    <td>50</td>
+    <td>100</td>
+    <td></td>
+    <td></td>
+  <tr>
+    <td>4</td>
+    <td>3</td>
+    <td>1 * 4</td>
+    <td>2 * 2</td>
+    <td>4 * 1</td>
+    <td></td>
+    <td>25</td>
+    <td>50</td>
+    <td>100</td>
+    <td></td>
+  <tr>
+    <td>6</td>
+    <td>4</td>
+    <td>1 * 6</td>
+    <td>2 * 3</td>
+    <td>3 * 2</td>
+    <td>6 * 1</td>
+    <td>17</td>
+    <td>33</td>
+    <td>50</td>
+    <td>100</td>
+  <tr>
+    <td>8</td>
+    <td>4</td>
+    <td>1 * 8</td>
+    <td>2 * 4</td>
+    <td>4 * 2</td>
+    <td>8 * 1</td>
+    <td>12</td>
+    <td>25</td>
+    <td>50</td>
+    <td>100</td>
+</table>
+
+The complexity gets out of hand pretty rapidly.  Six is probably the largest
+useful number ... 
+<p>
+Just as the selection of series vs. parallel is a bit like the selection
+of gears in a gearbox, the two likely strategies are manual or automatic
+switching.  For manual switching, a control would select which contactors
+to close, giving a selection "Parallel-Neutral-Series" just like 1-N-2 on
+a motorcycle gearbox.  The throttle setting would provide PWM control 
+over power and regen.  For automatic switching, a controller would
+monitor throttle position, battery voltage and motor voltage, and 
+select the appropriate 'gear' and PWM setting.
+<p>
+Someone on the list pointed out that this would be a Bad Idea with most
+controllers: the input stage capactitors need 'precharging', generally
+done by a resistor in parallel with the contactor.  Switching voltages
+would be messy.  Instead, if you wanted to do S/P switching, you'd need
+a controller designed for the job, with input stage capacitors _before_
+the switch.  Since the S/P switching is mostly there to do regeneration,
+and since the controllers people are talking about don't do regen anyway,
+it's not a big deal -- I'd need to build my own controller anyway!
+
+<p>
+<h3>Old Shopping List</h3>
+<table border width="90%">
+<tr><td>Kawasaki GPX250 or similar rolling chassis<br>inc. minor repairs<td>trading post?<td>$500</tr>
+<tr><td>Chain & Sprockets (motorcycle)<td>bike shop<td>$250</tr>
+<tr><td>KIT: Etek M7, Alltrax controller, charger, throttle<td>currietech.com.au<td>$2400</tr>
+<tr><td>4 * Optima YT D31<td>?<td>$2000</tr>
+<tr><td>Motor mount plate & front sprocket carrier & battery cages<td>custom<td>$300</tr>
+<tr><td>Sundries: (lights, paint, shrinkage)<td>&nbsp;<td>$500</tr>
+<tr><th colspan=2 align=right>TOTAL:<td>$5950</tr>
+</table>
+<p>
+... which, sadly, probably puts this project out of my league.  Compared
+to buying a decent GPX250 for $3000 and $3000 worth of fuel, it'd take
+perhaps 40,000km to break even ... and given the range (40km or so),
+that's 1000 discharge/recharge cycles (perhaps 3 years) and by then the
+batteries are probably half shagged.  Oh well.  It'd be a nice toy :-).
+
+<h3>New Shopping List</h3>
+
+On the other hand, if the batteries and controller could be gotten
+cheaper, perhaps by sponsorship on the batteries and by importing parts
+directly from the States (I've seen Etek+controller for US$700), perhaps
+it'd break even ... perhaps this explains why most of the E-vehicles seem
+to be from the States, even though fuel is cheap over there.
+<p>
+The constant torque of a DC motor, as compared to the jerkiness of a 
+ICE, probably means I could get away with a light chain.  Belt drive
+is another option, but finding matching ratios may be a problem.  
+Actually <A HREF="http://www.cloudelectric.com/">Cloud Electric</A>
+have #40 sprockets down to 11 tooth (on a 7/8" shaft) and up to
+60 teeth on a four-hole rear sprocket.  So ratios up to about 5.5:1
+might be possible.
+<p>
+<table border width="90%">
+<tr><td>Kawasaki GPX250 or similar rolling chassis<br>inc. minor repairs<td>trading post?<td>$&nbsp;500</tr>
+<tr><td>Chain & Sprockets (#40)<td>Cloud Electric<td>$&nbsp;100</tr>
+<tr><td>KIT: Etek M7, Alltrax 300A, etc<td>Cloud Electric<td>$1200</tr>
+<tr><td>4 * Gel-Tech 8G24<td>Solar Online<td>$1200</tr>
+<tr><td>2 * 24V 6A Smart Chargers<td>Jaycar<td>$&nbsp;200</tr>
+<tr><td>Motor mount plate & battery cages<td>custom<td>$&nbsp;200</tr>
+<tr><td>Sundries: (rattlecan paint)<td>&nbsp;<td>$&nbsp;100</tr>
+<tr><th colspan=2 align=right>TOTAL:<td>$3500</tr>
+</table>
+
+... which makes it look a lot more tempting ... hmmmm ...
+
+<h3>LiIon Batteries</h3>
+
+<table><tr><td>
+
+The limiting factor on the above is the sheer weight of batteries
+it'd need to lug around, so I'm considering what could be done
+with LiIons.
+<A HREF="http://www.thunder-sky.com/en/battery.htm">Thunder Sky</A>
+have Lithium cells at prices competitive with a Optima YT pack.
+Apparently they're Cr-F-Li chemistry.
+
+<pre>
+TS-LCP50AHA	3.6V	50Ah	1600g	190x116x46	US$98.
+TC-LCP100AHA	3.6V	100Ah	3000g	220x145x61	US$200.
+</pre>
+<p>
+To get to a nominal 48V (for the Etek) it'd need about 14 cells 
+in series: so that'd be 42kg / US$2800 for the 100Ah pack.
+<p>
+One limitation of these cells is that they become quite inefficent
+past 2CA discharge, eg: you shouldn't try to get more than 100A
+out of a 50Ah cell.  This makes a series/parallel setup essential
+to run an Etek motor ... with two banks in parallel, you could source 200A 
+without sagging much.  Another possibility is to use UltraCapacitors
+as an intermediary.
+<p>
+The other problem is that LiIon batteries need a per-cell Battery
+Management System.  Mostly what this seems to be is a method for 
+making sure that the voltage across a 3.6V nominal cell never gets
+above about 4.3V.  <A HREF="http://www.metricmind.com/ac_honda/bms.htm">
+The easiest way to do this is to shunt current past the cell</A>, 
+with a circuit which is more-or-less a 'sharper' version of a Zener
+diode. 
+<p>
+Simple charging system: A power supply capable of 32V 10A sits across
+a bank of 7 Lithium cells, each of which is clamped to 4.3V.  While
+they're charging, the bank voltage will be <30V.  When all shunts
+are shunting, bank voltage will have risen to 30.1V, at which point
+the charger can turn itself off.
+<p>
+These batteries apparently like to be variable current charged, so
+the one power supply can switch once a minute between the two banks.
+Now, admittedly, that's a 320VA PSU we're talking about, so it's still
+no lightweight.  But it's not a welder either, and it doesn't have
+to be too sophisticated since the clampers do almost all the regulation.
+<p>
+They also have integrated packs with built-in charger at very good prices.
+Two of the 24V packs seem the obvious easy solution to my e-bike's
+power needs, but I'd like something which could handle regeneration ...
+<pre>
+TS-IC36V18AH    36V	18Ah	7200g	415x97x132	US$300.
+TS-IC24V50AH    24V	50Ah 	18kg 	405x122x202	US$700.
+TS-IC24V90AH    24V	90Ah	24kg 	490x120x217	US$1000.
+</pre>
+... still, it might be an effective way to get started without building
+too much fancy stuff.  Two 24V 90Ah packs, a series/parallel 
+contactor setup on a 'gear shift' (no clutch, so left hand has some
+free time) and it'd be away!  About the same price as 4*Optimas + 2*chargers,
+slightly better range and <strong>half the weight</strong>.  Sounds like
+a pretty good deal.  It'd mean I could move to a lighter chassis, too
+-- now, a <A HREF="http://www.bikepics.com/gilera/cx125/">Gilera CX125</A>, that'd be cool!  Pity they're a little on the rare side.
+
+<p>
+LiIon Shopping List:
+<p>
+<table border width="90%">
+<tr><td>Light motorcycle rolling chassis<br>inc. minor repairs<td>trading post?<td>$&nbsp;500</tr>
+<tr><td>Chain & Sprockets (#40)<td>Cloud Electric<td>$&nbsp;100</tr>
+<tr><td>KIT: Etek M7, Alltrax 300A, etc<td>Cloud Electric<td>$1200</tr>
+<tr><td>2 * TS-IC24V90AH 24V 90Ah batteries w/ inbuilt charger<td>ThunderSky<td>$2666</tr>
+<tr><td>Motor mount plate & battery cages<td>custom<td>$&nbsp;200</tr>
+<tr><td>Sundries: (rattlecan paint)<td>&nbsp;<td>$&nbsp;100</tr>
+<tr><th colspan=2 align=right>TOTAL:<td>$4766</tr>
+</table>
+<hr size=5>
+
+<h2>Links</h2>
+
+<h3>Stuff:</h3>
+<ul>
+<li><A HREF="crazy.html">Two crazy hybrid motorcycle ideas I had</A>
+<li><A HREF="skate.html">Electric skateboard idea</A>
+</ul>
+
+<h3>Other People's EVs:</h3>
+<ul>
+<li><A HREF="http://www.metricmind.com/ac_honda/main2.htm">Victor Tikhonov's AC Honda</A> Lots of photos and notes on an Siemens AC / LiIon / Ultra-capacitor
+driven electric car.  Serious Stuff.
+<li><A HREF="http://www.austinev.org/evalbum/motorcycles.html">Electric Motorcycles Photo Album</A>
+<li><A HREF="http://www.electric-bikes.com/motorcys.htm">Electric-bikes.com</A>
+<li><A HREF="http://www.ebikes.ca/">UBC Electric Bike Club</A>
+</ul>
+
+<h3>EV Mailing List(s):</h3>
+
+<ul>
+<li><A HREF="http://www.madkatz.com/ev/evlist.html">Instructions for joining the EV List</A>
+<li><A HREF="http://www.mail-archive.com/ev@listproc.sjsu.edu/">EV List Archives</A>
+<li><A HREF="http://www.evtech.org/">The EV Tech mailing list</A>
+<li><A HREF="http://groups.yahoo.com/group/power-assist/">Power-Assist Yahoogroup</A> (for power-assisted bicycles, mostly).
+</ul>
+
+
+<h3>Australian Suppliers:</h3>
+
+<ul>
+<li><A HREF="http://www.dlmenergy.com/">DLM Energy</A> sell e-bike parts
+<li><A HREF="http://www.eveez.com/">EVS</A> aka <A HREF="http://www.currietech.com.au/">Currietech</A> (St. Kilda) Sell ETEK M7 motor and controller
+<li><A HREF="http://www.solaronline.com.au/products.html">Solar Online</A> have Federal Gel-Tech batteries cheap
+<li><A HREF="http://www.rpc.com.au">Rainbow Power Company</A> have various solar power bits and pieces.
+</ul>
+
+<h3>International Suppliers:</h3>
+<ul>
+<li><A HREF="http://www.cloudelectric.com/">Cloud Electric</A> (USA) Brilliant range of E-stuff.
+<li><A HREF="http://www.ev-america.com/suppliers.html">EV America</A> (USA)
+<li><A HREF="http://www.goldenmotor.com/">Golden Motor</A>: hub motors (China)
+<li><A HREF="http://www.electricmotorsport.com/PARTS/parts.htm">Electric Motor Sport</A> (USA)
+<li><A HREF="http://www.thunder-sky.com/products_en.asp">Thunder Sky LiIon batteries</A> (China)
+</ul>
+
+<h3>High-tech doodads:</h3>
+<ul>
+<li><A HREF="http://ixys.com/">IXYS Semiconductors: high-current MOSFETS</A>
+<li><A HREF="http://irf.com/">International Rectifier</A> who
+have a lot of
+<A HREF="http://www.irf.com/technical-info/papers.html">technical papers
+on semiconductors</A> on their site.
+</ul>
+
+<p><br><p>
+<hr>
+</body></html>
