@@ -301,8 +301,8 @@ and lever very gently with a crowbar (one after the other)
 <h3><font color="red">CDI Exciter coils</font></h3>
 
 	See
-	<A HREF="http://moto.zoic.org/xlv/manual/ch17/">Chapter 17: Ignition</A> and the
-	<A HREF="http://moto.zoic.org/xlv/manual/ch20/">Wiring Diagram</A>.
+	<A HREF="http://moto.zoic.org/xlv/manual/">The Manual</a>
+	especially Chapter 17: Ignition and the Chapter 20: Wiring Diagram.
 	<p>
 	<em>Thanks to Rossco:</em> The exciter coils that charge the
 	cdi's can break down, any bike with more than 30,000 probably
@@ -320,6 +320,58 @@ and lever very gently with a crowbar (one after the other)
 	You can bodge around the
 	exciter coils by using a mains transformer backwards. 
 	see the <A HREF="news:aus.motorcycles">aus.moto</A> thread <A HREF="http://groups.google.com/groups?threadm=bea156c2.0111281348.3befe8c7%40posting.google.com">"Whale Oil Beef Hooked"</A> if you dare!<p>
+
+	<blockquote><pre>
+From: B. T. Humble
+
+	Four days without a ride was just getting intolerable, so I had
+another look at the CDI/Stator problem on The Terrible Vee (CX500).
+It has high-voltage windings inside the alternator to supply ~100VAC
+to the CDI, and these must have been designed specifically for the
+Australian market by a Japanese bloke who was still peeved about
+losing the war...
+
+After a bit of head scratching I retrieved a 240V-&gt;12V transformer
+from my junk box, and piggybacked the 12V winding onto one of the
+15VAC charging circuit windings.  I then hooked up the 240V winding to
+the high-voltage input of the CDI, and lit the blue touch paper...
+
+Amazingly, it works.  At idle (1500rpm) it produces 140VAC which makes
+for really good starting, however since this transformer was designed
+for use at 50Hz the secondary voltage drops off rapidly as RPM
+increases (about 60VAC at 4000RPM), ultimately limiting the engine to
+around 5500RPM while under load (I think this is due to the inductance
+of the windings?).
+
+Since the secondary transformer winding is rated at 800mA and I was
+able to ride the bike for about 30km without burning it out (it only
+got slightly warm), I'd guess it's drawing less than an amp from the
+alternator, which is the equivalent of adding a 12W light to the
+electrical load.  (I don't have an AC ammeter so I don't know for
+sure).
+
+Looks like a simple inverter will do the job after all, and a lot
+cheaper than $200 for a secondhand stator or about the same for a
+rewind.  Also I'm not enthusiastic about dropping the motor _again_ to
+replace the stator, so this'll keep me going for a while. :-)
+
+BTH
+</pre></blockquote>
+
+	<blockquote><pre>
+From: sharkey
+
+So I tried it. Hulking great transformer from an old power
+supply, 30VAC windings across the stator, 240VAC windings
+into the CDI boxes. And the bloody thing worked!
+
+Mr B T Humble, should you ever visit Melbourne (eg: the Supers!)
+I'll buy you at least a large beer or three.
+
+I ran it long enough to get me home then changed the
+stator. The transformer weighed about a kilo and got ... quite warm ...
+in any case!
+		</pre></blockquote>
 
 	Mine lasted over 60,000 kms before they finally failed, both
 	at once strangely enough. Oddly enough, when I replaced
@@ -348,6 +400,9 @@ and lever very gently with a crowbar (one after the other)
 	damned things.  Presumably a <A HREF="../efi/ignite.html">DC-DC converter</A>
 	could do the job ... I think they're only drawing
 	about 15W each ...<p>
+
+	I did end up trying out an inverter solution, you can read about it at
+	<a href="../efi/ignite.html">Homebrew EFI -- Ignition!</a>
 
 <hr>
 <A NAME="Oil"></A>
