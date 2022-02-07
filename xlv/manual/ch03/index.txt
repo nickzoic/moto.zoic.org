@@ -1,0 +1,28 @@
+Honda XLV750R Shop Manual
+3: Maintenance
+3-01: Service Information (1) 
+3-02: Service Information (2) 
+3-03: Maintenance Schedule 
+3-04: Fuel Lines 
+3-04: Fuel Filter 
+3-04: Throttle Operation 
+3-05: Carburetor - Choke 
+3-06: Air Cleaner 
+3-07: Crankcase Breather 
+3-07: Spark Plugs 
+3-08: Ignition Timing 
+3-08: Carburetor Idle Speed 
+3-09: Carburetor Synchronization 
+3-10: Cylinder Compression 
+3-10: Battery 
+3-11: Brake Fluid 
+3-11: Brake Shoe / Pad Wear 
+3-12: Brake System 
+3-13: Brake Light Switch 
+3-13: Headlight Aim 
+3-14: Clutch 
+3-15: Side Stand 
+3-15: Suspension 
+3-16: Nuts, Bolts, Fasteners 
+3-17: Wheels 
+3-17: Steering Head Bearings 

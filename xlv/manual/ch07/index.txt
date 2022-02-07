@@ -1,0 +1,15 @@
+Honda XLV750R Shop Manual
+7: Alternator / Starter Clutch / Gearshift Linkage
+7-00: Diagram
+7-01: Service Information
+7-02: Stator Removal (1)
+7-03: Stator Removal (2)
+7-04: Flywheel Removal
+7-04: Starter Clutch Disassembly (1)
+7-05: Starter Clutch Disassembly (2)
+7-06: Gearshift Linkage Removal
+7-06: Gearshift Linkage Installation (1)
+7-07: Gearshift Linkage Installation (2)
+7-08: Starter Clutch Assembly
+7-09: Flywheel Installation
+7-09: Stator Installation

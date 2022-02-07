@@ -1,0 +1,29 @@
+Honda XLV750R Shop Manual
+8: Cylinder Head / Valve
+8-00: Diagram
+8-01: Service Information (1)
+8-02: Service Information (2)
+8-03: Troubleshooting 
+8-04: Cylinder Head Cover Removal
+8-05: Camshaft Removal (1)
+8-06: Camshaft Removal (2)
+8-07: Camshaft Removal (3)
+8-08: Cylinder Head Cover Disassembly (1)
+8-09: Cylinder Head Cover Disassembly (2)
+8-10: Cylinder Head Removal
+8-10: Cylinder Head Disassembly (1)
+8-11: Cylinder Head Disassembly (2)
+8-12: Cylinder Head Disassembly (3)
+8-13: Valve Guide Replacement
+8-14: Valve Seat Inspection / Resurfacing (1)
+8-15: Valve Seat Inspection / Resurfacing (2)
+8-16: Valve Seat Inspection / Resurfacing (3)
+8-17: Cylinder Head Assembly
+8-18: Cylinder Head Installation
+8-19: Camshaft Installation (1)
+8-20: Camshaft Installation (2)
+8-21: Cylinder Head Cover Assembly (1)
+8-22: Cylinder Head Cover Assembly (2)
+8-23: Cylinder Head Cover Installation (1)
+8-24: Cylinder Head Cover Installation (2)
+8-25: Cylinder Head Cover Installation (3)

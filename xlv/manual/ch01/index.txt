@@ -1,0 +1,15 @@
+Honda XLV750R Shop Manual
+1: General Information
+1-01	General Safety 
+1-01	Service Rules 
+1-02	Model Identification 
+1-03	Specifications (1) 
+1-04	Specifications (2) 
+1-05	Torque Values (1) 
+1-06	Torque Values (2) 
+1-07	Tools 
+1-08	Tools 
+1-09	Cable & Harness Routing (1) 
+1-10	Cable & Harness Routing (2) 
+1-11	Cable & Harness Routing (3) 
+1-12	Cable & Harness Routing (4) 

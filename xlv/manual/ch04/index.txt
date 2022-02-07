@@ -1,0 +1,19 @@
+XLV750R Shop Manual
+4: Fuel System
+4-00	Diagram
+4-01	Service Information
+4-02	Troubleshooting
+4-03	Carburetor Removal
+4-04	Vacuum Chamber (1)
+4-05	Vacuum Chamber (2)
+4-06	Float Chamber (1)
+4-07	Float Chamber (2)
+4-08	Carburetor Separation (1)
+4-09	Carburetor Separation (2)
+4-10	Carburetor Assembly
+4-11	Carburetor Installation
+4-12	Pilot Screw Adjustment
+4-12	Fuel Tank (1)
+4-13	Fuel Tank (2)
+4-14	Air Cleaner Case
+4-15	Fuel Pump
